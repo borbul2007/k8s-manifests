@@ -4,7 +4,7 @@ metadata:
   name: netology-svc
 spec:
   selector:
-    app.kubernetes.io/name: netology-web
+    app: netology-web
   ports:
     - name: netology-svc
       protocol: TCP
