@@ -6,7 +6,6 @@ spec:
   selector:
     app: netology-web
   ports:
-    - name: netology-svc
-      protocol: TCP
+    - protocol: TCP
       port: 8081
       targetPort: 8080
