@@ -4,8 +4,9 @@ metadata:
   name: netology-svc
 spec:
   selector:
-    app.kubernetes.io/name: netology-svc
+    app.kubernetes.io/name: netology-web
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 9376
+    - name: netology-svc
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
