@@ -5,15 +5,19 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx-multitools
+      app: nginx
   template:
     metadata:
       labels:
-        app: nginx-multitools
+        app: nginx
     spec:
       containers:
       - name: nginx
         image: nginx:latest
+      initContainers:
+      - name: init-service
+        image: busybox:latest
+        command: ['sh', '-c', "until nslookup nginx-svc.default.svc.cluster.local; do echo waiting for nginx; sleep 2; done"]
