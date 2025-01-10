@@ -17,7 +17,6 @@ spec:
       containers:
       - name: multitools
         image: wbitt/network-multitool
-        command: ['sh', '-c', 'echo "The app is running!" && sleep 3600']      
       - name: nginx
         image: nginx:latest
         ports:
