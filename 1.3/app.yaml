@@ -1,0 +1,23 @@
+kind: Deployment
+metadata:
+  name: nginx-multitools
+  labels:
+    app: nginx-multitools
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-multitools
+  template:
+    metadata:
+      labels:
+        app: nginx-multitools
+    spec:
+      containers:
+      - name: multitools
+        image: multitools:latest
+        command: ['sh', '-c', 'echo "The app is running!" && sleep 360']      
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 8080
