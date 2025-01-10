@@ -9,8 +9,8 @@ spec:
     - name: multitools
       protocol: TCP
       port: 8080
-      targetPort: 80
+      targetPort: 8080
     - name: nginx
       protocol: TCP
       port: 8081
-      targetPort: 8081
+      targetPort: 80
