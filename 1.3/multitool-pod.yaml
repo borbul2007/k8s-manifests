@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
   - name: multitool
-    image: gcr.io/kubernetes-e2e-test-images/echoserver:2.2
+    image: wbitt/network-multitool
