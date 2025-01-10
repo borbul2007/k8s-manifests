@@ -22,9 +22,5 @@ spec:
           value: 8080
         - name: HTTPS_PORT
           value: 8443
-        ports:
-        - containerPort: 8080
       - name: nginx
         image: nginx:latest
-        ports:
-        - containerPort: 8081
