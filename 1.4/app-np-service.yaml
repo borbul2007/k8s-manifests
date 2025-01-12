@@ -11,7 +11,9 @@ spec:
       protocol: TCP
       port: 9001
       targetPort: 8080
+      nodePort: 30001
     - name: nginx
       protocol: TCP
       port: 9002
       targetPort: 80
+      nodePort: 30002
