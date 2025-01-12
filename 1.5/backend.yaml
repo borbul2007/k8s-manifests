@@ -5,11 +5,20 @@ metadata:
   labels:
     app: backend
 spec:
-  containers:
-  - name: multitools
-    image: wbitt/network-multitool
-    env:
-    - name: HTTP_PORT
-      value: "8080"
-    - name: HTTPS_PORT
-      value: "8443"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        env:
+        - name: HTTP_PORT
+          value: "8080"
+        - name: HTTPS_PORT
+          value: "8443"
