@@ -10,7 +10,3 @@ spec:
       protocol: TCP
       port: 9001
       targetPort: 8080
-    - name: backend
-      protocol: TCP
-      port: 9002
-      targetPort: 80
