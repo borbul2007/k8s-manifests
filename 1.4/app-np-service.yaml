@@ -5,12 +5,13 @@ metadata:
 spec:
   selector:
     app: nginx-multitools
+  type: NodePort
   ports:
-    - name: multitools-np
+    - name: multitools
       protocol: TCP
       port: 9001
       targetPort: 8080
-    - name: nginx-np
+    - name: nginx
       protocol: TCP
       port: 9002
       targetPort: 80
