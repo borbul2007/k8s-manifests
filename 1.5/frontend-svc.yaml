@@ -9,4 +9,4 @@ spec:
     - name: frontend
       protocol: TCP
       port: 9001
-      targetPort: 8080
+      targetPort: 80
