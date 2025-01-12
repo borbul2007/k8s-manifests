@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-svc
+  name: frontend-svc
 spec:
   selector:
-    app: service-svc
+    app: frontend
   ports:
     - name: frontend
       protocol: TCP
