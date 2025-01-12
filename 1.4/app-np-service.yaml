@@ -7,7 +7,7 @@ spec:
     app: nginx-multitool
   type: NodePort
   ports:
-    - name: multitools
+    - name: multitool
       protocol: TCP
       port: 9001
       targetPort: 8080
