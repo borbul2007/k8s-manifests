@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: multitool
+  labels:
+    app: multitool
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multitool
+  template:
+    metadata:
+      labels:
+        app: multitool
+    spec:
+      containers:
+      - name: multitool
+        image: wbitt/network-multitool:latest
+        env:
+        - name: HTTP_PORT
+          value: "8080"
+        - name: HTTPS_PORT
+          value: "8443"
+        volumeMounts:
+        - name: node-syslog
+          mountPath: /node-syslog
+      volumes:
+        - name: node-syslog
+          hostPath:
+            /var/log/syslog
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: multitool-svc
+spec:
+  selector:
+    app: multitool
+  ports:
+    - name: multitool
+      protocol: TCP
+      port: 9002
+      targetPort: 8080
