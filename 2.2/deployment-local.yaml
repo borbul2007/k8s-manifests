@@ -52,8 +52,8 @@ spec:
   storageClassName: ""
   capacity:
     storage: 10Mi
-    accessModes:
-      ReadWriteOnce
-    persistentVolumeReclaimPolicy: Retain  
+  accessModes:
+    ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain  
   hostPath:
     path: /tmp/data-logs
