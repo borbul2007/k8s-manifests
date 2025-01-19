@@ -19,7 +19,7 @@ spec:
        image: busybox
        command: ['sh','-c','while true; do date >> /data-logs/date-log.txt; sleep 5; done']
        volumeMounts:
-       - name: tmp
+       - name: vol
          mountPath: /data-logs
      - name: multitool
        image: wbitt/network-multitool:latest
@@ -51,7 +51,7 @@ metadata:
 spec:
   storageClassName: ""
   capacity:
-    storage: 100Mi
+    storage: 10Mi
     accessModes:
       ReadWriteOnce
     persistentVolumeReclaimPolicy: Retain  
