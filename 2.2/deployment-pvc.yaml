@@ -3,10 +3,10 @@ kind: PersistentVolumeClaim
 metadata:
   name: data-logs-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 100M
+      storage: 100M 
