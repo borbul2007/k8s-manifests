@@ -10,9 +10,6 @@ spec:
    matchLabels:
      app: multitool
  template:
-   metadata:
-     labels:
-       app: multitool
    spec:
      containers:
      - name: busybox
