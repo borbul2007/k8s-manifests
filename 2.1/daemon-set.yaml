@@ -21,6 +21,6 @@ spec:
         - name: node-syslog
           mountPath: /node-syslog
       volumes:
-        - name: node-syslog
-          hostPath:
-            /var/log/syslog
+      - name: node-syslog
+        hostPath:
+          path: /var/log/syslog
