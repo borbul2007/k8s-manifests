@@ -53,7 +53,7 @@ spec:
   capacity:
     storage: 10Mi
   accessModes:
-    ReadWriteOnce
+    - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain  
   hostPath:
     path: /tmp/data-logs
