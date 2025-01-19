@@ -17,6 +17,6 @@ spec:
     - name: tmp
       mountPath: /data-logs
   volumes:
-    - name: tmp
-      hostPath:
-        path: /tmp/data-logs
+   - name: tmp
+     hostPath:
+       path: /tmp/data-logs
