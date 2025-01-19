@@ -17,9 +17,9 @@ spec:
       - name: multitool
         image: wbitt/network-multitool:latest
         volumeMounts:
-        - name: node-syslog
-          mountPath: /node-syslog
+        - name: node-logs
+          mountPath: /node-logs
       volumes:
-      - name: node-syslog
+      - name: node-logs
         hostPath:
-          path: /var/log/syslog
+          path: /var/log/
