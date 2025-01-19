@@ -31,3 +31,29 @@ spec:
      - name: vol
        persistentVolumeClaim:
          claimName: data-logs-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: data-logs-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100M 
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-logs-pv
+spec:
+  capacity:
+    storage: 100M
+    accessModes:
+      ReadWriteOnce
+    persistentVolumeReclaimPolicy: Retain  
+  storageClassName: local-storage
+  hostPath:
+    path: /tmp/data-logs
