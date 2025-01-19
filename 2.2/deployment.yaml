@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multibox-dm
+  labels:
+    app: multibox-dm
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: multibox-dm
+ template:
+   metadata:
+     labels:
+       app: multibox-dm
+   spec:
+     containers:
+     - name: busybox
+       image: busybox
+       command: ['sh','-c','while true; do date >> /data-logs/date-log.txt; sleep 5; done']
+       volumeMounts:
+       - name: tmp
+         mountPath: /data-logs
+     - name: multitool
+       image: wbitt/network-multitool:latest
+       command: ['sh','-c','while true; do cat /data-logs/date-log.txt; done']
+       volumeMounts: 
+       - name: vol
+         mountPath: /data-logs
+     volumes:
+     - name: vol
+       persistentVolumeClaim:
+         claimName: data-logs-pvc
