@@ -10,17 +10,20 @@ spec:
    matchLabels:
      app: multitool
  template:
+   metadata:
+     labels:
+       app: multitool
    spec:
      containers:
      - name: busybox
        image: busybox
-       commands: ['sh','-c','while true; do date >> /data-logs/date-log.txt && sleep 5']
+       command: ['sh','-c','while true; do date >> /data-logs/date-log.txt && sleep 5']
        volumeMounts:
        - name: tmp
          mountPath: /data-logs
      - name: multitool
        image: wbitt/network-multitool:latest
-       commands: ['sh','-c','while true; do cat /data-logs/date-log.txt']
+       command: ['sh','-c','while true; do cat /data-logs/date-log.txt']
        volumeMounts: 
        - name: tmp
          mountPath: /data-logs
