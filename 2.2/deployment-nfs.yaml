@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multitool
+  labels:
+    app: multitool
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: multitool
+ template:
+   metadata:
+     labels:
+       app: multitool
+   spec:
+     - name: multitool
+       image: wbitt/network-multitool:latest
+       volumeMounts: 
+       - name: vol
+         mountPath: /nfs
+     volumes:
+     - name: vol
+       persistentVolumeClaim:
+         claimName: multitool-nfs-pvc
+---
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: multitool-nfs-pvc
+    spec:
+      storageClassName: "nfs"
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Mi
