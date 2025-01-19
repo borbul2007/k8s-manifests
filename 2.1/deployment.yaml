@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: multitool
+  name: multibox-dm
   labels:
-    app: multitool
+    app: multibox-dm
 spec:
  replicas: 1
  selector:
    matchLabels:
-     app: multitool
+     app: multibox-dm
  template:
    metadata:
      labels:
-       app: multitool
+       app: multibox-dm
    spec:
      containers:
      - name: busybox

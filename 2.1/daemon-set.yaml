@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: multitool
+  name: multibox-ds
   labels:
-    app: multitool
+    app: multibox-ds
 spec:
   selector:
     matchLabels:
-      app: multitool
+      app: multibox-ds
   template:
     metadata:
       labels:
-        app: multitool
+        app: multibox-ds
     spec:
       containers:
       - name: multitool
