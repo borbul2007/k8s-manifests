@@ -21,10 +21,10 @@ spec:
         - name: multitool-env
           valueFrom:
             configMapKeyRef:
-              name: multitool-env
-              key: MULTITOOL_HTTP_PORT
-              name: multitool-env
-              key: MULTITOOL_HTTPS_PORT
+              name: multitool
+              key: HTTP_PORT
+              name: multitool
+              key: HTTPS_PORT
       - name: nginx
         image: nginx:latest
         volumeMounts:
