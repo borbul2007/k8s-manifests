@@ -20,4 +20,4 @@ spec:
   tls:
     - hosts:
       - nt.ksob.lan
-      secretName: nginx-secret-tls
+      secretName: ingress-tls-secret
