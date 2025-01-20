@@ -18,12 +18,15 @@ spec:
       - name: multitool
         image: wbitt/network-multitool:latest
         env:
-        - name: multitool-env
+        - name: HTTP_PORT
           valueFrom:
             configMapKeyRef:
-              name: multitool
+              name: multitool-env
               key: HTTP_PORT
-              name: multitool
+        - name: HTTPS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: multitool-env
               key: HTTPS_PORT
       - name: nginx
         image: nginx:latest
