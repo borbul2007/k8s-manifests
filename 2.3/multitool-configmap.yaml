@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: multitool-env
+data:
+  MULTITOOL_HTTP_PORT: 8080
+  MULTITOOL_HTTPS_PORT: 8443
