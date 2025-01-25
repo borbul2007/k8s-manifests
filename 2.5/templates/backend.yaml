@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: multitool
-        image: "wbitt/network-multitool:{{ .Values.multitool.image.tag }}"
+        image: "wbitt/network-multitool:{{ .Values.multitool_image.tag }}"
         env:
         - name: HTTP_PORT
           value: "8080"
