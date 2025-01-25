@@ -22,6 +22,6 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: {{ .Values.app_name }-backend-svc
+              name: {{ .Values.app_name }}-backend-svc
               port:
                 number: 9002
