@@ -1,5 +1,6 @@
   namespace: app1
-  app_name: app1
+  app_name: app2
   multitool_image:
     tag: latest
-  nginx_image: "nginx:latest"
+  nginx_image:
+    tag: latest
