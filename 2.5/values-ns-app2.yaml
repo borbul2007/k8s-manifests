@@ -4,3 +4,4 @@
     tag: latest
   nginx_image:
     tag: latest
+    
