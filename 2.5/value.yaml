@@ -1,4 +1,4 @@
   namespace: app1
   app_name: app1
-  multitool_image_tag: latest
-  nginx_image_tag: latest
+  multitool_image: latest
+  nginx_image: nginx:latest
