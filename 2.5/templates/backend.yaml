@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.app-name }}-backend
+  name: {{ .Values.app_name }}-backend
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ .Values.app-name }}-backend
+    app: {{ .Values.app_name }}-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.app-name }}-backend
+      app: {{ .Values.app_name }}-backend
   template:
     metadata:
       labels:
-        app: {{ .Values.app-name }}-backend
+        app: {{ .Values.app_name }}-backend
     spec:
       containers:
       - name: multitool
