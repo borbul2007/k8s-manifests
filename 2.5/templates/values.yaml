@@ -1,4 +1,4 @@
-  app_name: app
+  app_name: app1
   namespace: app1
   multitool_image:
     tag: latest
