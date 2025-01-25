@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress
+  namespace: {{ .Values.namespace }}
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
@@ -14,13 +15,13 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: frontend-svc
+              name: {{ .Values.appp-name  }}-frontend-svc
               port:
                 number: 9001
         - path: /api
           pathType: Prefix
           backend:
             service:
-              name: backend-svc
+              name: {{ .Values.appp-name  }}-backend-svc
               port:
                 number: 9002

@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: {{ .Values.appp-name  }}-frontend
+  namespace: {{ .Values.namespace }}
   labels:
-    app: frontend
+    app: {{ .Values.appp-name  }}-frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: frontend
+      app: {{ .Values.appp-name  }}-frontend
   template:
     metadata:
       labels:
-        app: frontend
+        app: {{ .Values.appp-name  }}-frontend
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: nginx:{{ .Values.nginx.image-tag }}
