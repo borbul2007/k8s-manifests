@@ -6,7 +6,7 @@ metadata:
   labels:
     app: {{ .Values.app_name }}-frontend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: {{ .Values.app_name }}-frontend
@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: {{ .Values.nginx_image.tag }}
+        image: nginx:{{ .Values.nginx_image.tag }}
