@@ -1,5 +1,5 @@
   namespace: app1
-  appp-name: app1
+  app-name: app1
   multitool:
     image-tag: latest
   nginx:
