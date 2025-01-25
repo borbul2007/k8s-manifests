@@ -4,16 +4,16 @@ metadata:
   name: {{ .Values.appp-name  }}-frontend
   namespace: {{ .Values.namespace }}
   labels:
-    app: {{ .Values.appp-name  }}-frontend
+    app: {{ .Values.app-name }}-frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: {{ .Values.appp-name  }}-frontend
+      app: {{ .Values.app-name }}-frontend
   template:
     metadata:
       labels:
-        app: {{ .Values.appp-name  }}-frontend
+        app: {{ .Values.app-name }}-frontend
     spec:
       containers:
       - name: nginx
