@@ -15,13 +15,13 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: {{ .Values.appp-name  }}-frontend-svc
+              name: {{ .Values.appp-name }}_frontend-svc
               port:
                 number: 9001
         - path: /api
           pathType: Prefix
           backend:
             service:
-              name: {{ .Values.appp-name  }}-backend-svc
+              name: {{ .Values.appp-name  }}_backend-svc
               port:
                 number: 9002
